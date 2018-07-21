@@ -1,75 +1,82 @@
 //Crystal Javascript with jQuery
 
+//Assigning random values to each crystal
+var crystal1 = Math.floor(Math.random() * 12 + 1);
+var crystal2 = Math.floor(Math.random() * 12 + 1);
+var crystal3 = Math.floor(Math.random() * 12 + 1);
+var crystal4 = Math.floor(Math.random() * 12 + 1);
+// // console.log(crystal4);
+
+//variables for tallying up score, NEED TO ADD ID'S
+var userTotal = 0;
+var wins = 0;
+var losses = 0;
+
 $(document).ready(function () {
 
-    //Asign random number for the user to guess
-    var randomNum = "Number: ";
 
-    var random = Math.floor(Math.random() * 120 + 19);
-    $("#randomNum").text(randomNum + random);
- 
-    //assing random values to each crystal
-    var crystal1 = Math.floor(Math.random() * 12 + 1);
-    var crystal2 = Math.floor(Math.random() * 12 + 1);
-    var crystal3 = Math.floor(Math.random() * 12 + 1);
-    var crystal4 = Math.floor(Math.random() * 12 + 1);
-    // console.log(crystal4);
+    var random = Math.floor(Math.random() * 102 + 19);
+    $("#randomNum").text("Number: " + random);
 
-    //variables for tallying up score, NEED TO ADD ID'S
-    var userTotal = 0;
-    var wins = 0;
-    var losses = 0;
 
     //When you click on crystals the assigned random value 'crystal1,2,3,4' will add to 'your score'. The values are hidden because assigned to .text on 'your score' instead of crystal images. The values stay the same number in the duration of each round. 
 
-    $("#amethyst").on("click", function () {
+    $("#amethyst").click(function () {
         userTotal = userTotal + crystal1;
+        tallies();
         $("#yourScore").text("Your Score: " + userTotal);
-        // console.log(userTotal);
     });
 
-    $("#pink").on("click", function () {
+    $("#pink").click(function () {
         userTotal = userTotal + crystal2;
+        tallies();
         $("#yourScore").text("Your Score: " + userTotal);
     });
 
-    $("#rainbow").on("click", function () {
+    $("#rainbow").click(function () {
         userTotal = userTotal + crystal3;
+        tallies();
         $("#yourScore").text("Your Score: " + userTotal);
     });
 
-    $("#blue").on("click", function () {
+    $("#blue").click(function () {
         userTotal = userTotal + crystal4;
+        tallies();
         $("#yourScore").text("Your Score: " + userTotal);
     });
 
-  //If 'your score' matches the random number the you win
 
-  function reset() { 
-      //How do you run a reset function? Do you put on the above click events inside this function?
+    function tallies() {
 
-       //Once player either wins or losses, the game will start over: the random values will reset, and 'your score' will reset to 0. 
+        if (userTotal === random) {
+            $("#wins").text("Wins: " + (wins += 1));
+            userTotal = 0;
+            resetRandom();
+            resetCrystal();
 
-    if (userTotal === random) {
-        $("#wins").text(wins++);
-        alert("You did it! Congrats!");
-        $(":reset");
-        console.log(random);
-    
-      }
-  }
+        } else if (userTotal > random) {
+            $("#losses").text("Losses: " + (losses += 1));
+            userTotal = 0;
+            resetRandom();
+            resetCrystal();
+        }
 
-    //if 'your score' exceeds the value of the random number then you lose
-  if (userTotal > random) {
-      $("#losses").text(losses++);
-      alert("You lost! Try again.");
-      $(":reset");
-  }
+    }
 
+    function resetRandom() {
 
+        random = Math.floor(Math.random() * 102 + 19);
+        $("#randomNum").text("Number: " + random);
+    }
 
-
+    function resetCrystal() {
+        crystal1 = Math.floor(Math.random() * 12 + 1);
+        crystal2 = Math.floor(Math.random() * 12 + 1);
+        crystal3 = Math.floor(Math.random() * 12 + 1);
+        crystal4 = Math.floor(Math.random() * 12 + 1);
+    }
 
 });
-   
+
+
 
