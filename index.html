@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+
+</head>
+
+<body>
+    <h1>Crystal Collector Game</h1>
+
+    <div class="card">
+        <p>
+            <br> You will be given a random number at the start of the game. There are four crystals below. By clicking on a
+            crystal you will add a specific amount of points to your total score.
+            <br>
+            <br> You win the game by matching your total score to random number, you lose the game if your total score goes above
+            the random number. The value of each crystal is hidden from you until you click on it.
+            <br>
+            <br> Each time the game restarts, the values of the crystals will change. Good luck!
+        </p>
+    </div>
+    <div id="game">
+        <div class="container" id="click-me">
+            <br>
+            <div class="row">
+                <div class="col-sm-3" id="amethyst">
+                    <img src="assets/images/amethyst.png" alt="amethyst" width="150px" height="150px">
+                </div>
+                <div class="col-sm-3" id="pink">
+                    <img src="assets/images/pink_crystal.jpg" alt="pink" width="150px" height="150px">
+                </div>
+                <div class="col-sm-3" id="rainbow">
+                    <img src="assets/images/rainbow_crystal.jpeg" alt="rainbow" width="150px">
+                </div>
+                <div class="col-sm-3" id="blue">
+                    <img src="assets/images/blue_crystal.jpg" alt="blue" width="150px">
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row" id="box">
+
+            <div class="col-sm-3" id="randomNum">
+                <p>Number: </p>
+            </div>
+            <div class="col-sm-3" id="yourScore">
+                <p>Your Score: </p>
+            </div>
+            <div class="col-sm-3" id="wins">
+                <p>Wins: </p>
+            </div>
+            <div class="col-sm-3" id="losses">
+                <p>Losses: </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
