@@ -19,14 +19,34 @@
 <body>
     <h1>Crystal Collector Game</h1>
 
-    <div class="card">
+    <div class="row" id="box">
         <p>
-            1. You will be given a random number at the start of the game.<br><br>
-            2. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br><br>
-            3. You win the game by matching your total score to random number, you lose the game if your total score goes above the random number. The value of each crystal is hidden from you until you click on it.<br><br>
-            4. Each time the game restarts, the values of the crystals will change. Good luck!<br><br>
+            1. You will be given a random number at the start of the game.
+            <br>
+            <br> 2. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+            total score.
+            <br>
+            <br> 3. You win the game by matching your total score to random number, you lose the game if your total score goes
+            above the random number. The value of each crystal is hidden from you until you click on it.
+            <br>
+            <br> 4. Each time the game restarts, the values of the crystals will change. Good luck!
+            <br>
+            <br>
         </p>
+        <div class="col-sm-3" id="randomNum">
+            <p>Number: </p>
+        </div>
+        <div class="col-sm-3" id="yourScore">
+            <p>Your Score: </p>
+        </div>
+        <div class="col-sm-3" id="wins">
+            <p>Wins: </p>
+        </div>
+        <div class="col-sm-3" id="losses">
+            <p>Losses: </p>
+        </div>
     </div>
+
     <div id="game">
         <div class="container" id="click-me">
             <br>
@@ -35,31 +55,14 @@
                     <img src="assets/images/amethyst.png" alt="amethyst" width="150px" height="150px">
                 </div>
                 <div id="pink">
-                    <img src="assets/images/pink_crystal.jpg" alt="pink" width="150px" height="150px">
+                    <img src="assets/images/black_crystal.png" alt="pink" width="150px" height="150px">
                 </div>
                 <div id="rainbow">
-                    <img src="assets/images/rainbow_crystal.jpeg" alt="rainbow" width="150px">
+                    <img src="assets/images/lightblue_crystal.png" alt="rainbow" width="150px" height="150px">
                 </div>
                 <div id="blue">
-                    <img src="assets/images/blue_crystal.jpg" alt="blue" width="150px">
+                    <img src="assets/images/white_crystal.png" alt="blue" width="150px" height="150px">
                 </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="row" id="box">
-
-            <div class="col-sm-3" id="randomNum">
-                <p>Number: </p>
-            </div>
-            <div class="col-sm-3" id="yourScore">
-                <p>Your Score: </p>
-            </div>
-            <div class="col-sm-3" id="wins">
-                <p>Wins: </p>
-            </div>
-            <div class="col-sm-3" id="losses">
-                <p>Losses: </p>
             </div>
         </div>
     </div>
